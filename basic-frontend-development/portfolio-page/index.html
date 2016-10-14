@@ -2,25 +2,77 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
   <title>Portfolio page</title>
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiifloat: none;
-}SIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 </head>
-<body>
+<body class="pushable">
+  <!-- https://codepen.io/iampeterbanjo/pen/KgRrRV -->
   <style type="text/css">
-    .center-block {
-      float: none;
+    @media screen and (max-width: 320px) {
+      .pointing.menu .item:not(.toc) {
+        display: none;
+      }
     }
   </style>
-  <!-- https://codepen.io/iampeterbanjo/pen/KgRrRV -->
 
-  <main class="container">
-    <section class="row">
-      <h1>Peter Banjo <br><small>front-end developer</small></h1>
+  <div class="ui vertical inverted sidebar menu left sidebar--menu">
+    <nav class="ui container">
+      <a class="item" href="#about">About</a>
+      <a class="item" href="#projects">Projects</a>
+      <a class="item" href="#contact">Contact</a>
+    </nav>
+  </div>
+
+  <main class="pusher">
+    <section id="top" class="ui inverted vertical masthead center aligned segment">
+      <div class="ui container">
+        <div class="ui large secondary inverted pointing menu">
+          <a class="sidebar--toggle toc item">
+            <i class="sidebar icon"></i>
+          </a>
+          <a class="item" href="#top">Back to top</a>
+          <a class="item" href="#about">About</a>
+          <a class="item" href="#projects">Projects</a>
+          <a class="item" href="#contact">Contact</a>
+        </div>
+        <!-- /div -->
+
+        <div class="ui text container">
+          <h1 class="ui inverted header">Peter Banjo <br><small>Web Developer</small></h1>
+
+          <ul class="social-media list-inline">
+            <li>
+              <a class="btn btn-default" target="_blank" href="https://stackoverflow.com/users/95055/peter"><i class="fa fa-stack-overflow" aria-hidden="true"></i>&nbsp;StackOverflow</a>
+            </li>
+            <li>
+              <a class="btn btn-default" target="_blank" href="https://github.com/iampeterbanjo"><i class="fa fa-github" aria-hidden="true"></i>&nbsp;Github</a>
+            </li>
+            <li>
+              <a class="btn btn-default" target="_blank" href="https://uk.linkedin.com/in/peterbanjo"><i class="fa fa-linkedin" aria-hidden="true"></i>&nbsp;LinkedIn</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </section>
-    <section class="row project-group">
-      <h1>Projects 2016</h1>
+
+    <section id="about" class="row">
+      <div class="col-xs-12">
+        <p>I love learning and solving problems wherever the code may lead. This requires listening to what design, development and business approaches have to say about making software personable for the people who build it and use it. I have broad personal experiences that facilitate team fit and bring fresh perspectives to familiar challenges.</p>
+
+        <p>My code is my responsibility and I strive to raise my standards each day. I've built corporate sites, eCommerce front-ends, hybrid mobile apps, WordPress themes and HTML emails. I want to perfect building beautiful interfaces and applications with scalable and elegant code.</p>
+
+        <p>I <3 the command line</p>
+      </div>
+    </section>
+
+
+    <section id="projects" class="row project-group">
+      <h1>Front-end web projects 2015 - 2016</h1>
+
       <ul class="list-inline">
         <li class="project col-xs-12 col-sm-6">
           <div class="thumbnail">
@@ -85,12 +137,33 @@
     </section>
     <!-- .project-group -->
 
+    <nav class="row nav">
+      <ul class="list-inline col-xs-12">
+        <li><a href="#top">Back to top</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <!-- /nav -->
+
     <footer class="row">
-      <div class="col-xs-10 center-block">
-        By Peter Banjo
+      <div class="col-xs-12 center-block">
+        By Peter Banjo <a href="#top">Back to top</a>
+
       </div>
     </footer>
   </main>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
   <!--/end codepen.io -->
+
+  <script type="text/javascript">
+    $('.sidebar--toggle').on('click', function sidebarIcon (e) {
+      console.log('test')
+      $('.sidebar--menu').sidebar('toggle');
+    })
+  </script>
 </body>
 </html>
